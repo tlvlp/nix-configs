@@ -23,7 +23,7 @@
         #theme
         sassc
         gtk-engine-murrine
-        gnome.gnome-themes-extra
+        gnome-themes-extra
     ];
 
     # Theme
