@@ -10,3 +10,11 @@ drwxr-xr-x user users .git/
 -rwxr-xr-x user users pu.sh*
 ```
 
+## Todo
+
+- BT fix at startup
+- zsh + nix terminal w/ nix config
+- How to run RustRover and Intellij (flakes? or just give write access)
+- How to install steam + gaming related drivers?
+- Configure docker (only for flakes?)
+- Add Gruvbox dark medium theme to os

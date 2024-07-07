@@ -5,14 +5,6 @@
 { config, pkgs, inputs, ... }:
 
 { 
-    # TODO: 
-    # - BT fix at startup
-    # - zsh + nix terminal w/ nix config
-    # - How to run RustRover and Intellij (flakes? or just give write access)
-    # - How to install steam + gaming related drivers?
-    # - Configure docker (maybe only for flakes?)
-    # - Add Gruvbox dark medium theme to os
-
     # [ OS ] #######################################################################################
 
     imports =

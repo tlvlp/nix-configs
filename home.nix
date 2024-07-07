@@ -33,6 +33,14 @@
         nvd
     ];
 
+    gtk = {
+        enable = true;
+        theme = {
+            name = "Gruvbox-dark";
+            package = pkgs.gruvbox-dark-gtk;
+        };
+    };
+
     programs.git = {
         enable = true;
         userName = "Peter Veres";
