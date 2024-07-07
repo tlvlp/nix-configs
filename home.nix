@@ -20,21 +20,17 @@
         jetbrains.idea-community
         vscode
         docker
-        #nix build
-        nix-output-monitor
-        nvd
         #theme
         sassc
         gtk-engine-murrine
         gnome.gnome-themes-extra
-        gruvbox-gtk-theme
     ];
 
     # Theme
     gtk = {
         enable = true;
         theme.name = "Gruvbox-Dark";
-        theme.package = gruvbox-gtk-theme;
+        theme.package = pkgs.gruvbox-gtk-theme;
     };
 
     # Git
