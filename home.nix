@@ -20,16 +20,12 @@
         jetbrains.idea-community
         vscode
         docker
-        #theme
-        sassc
-        gtk-engine-murrine
-        gnome-themes-extra
     ];
 
     # Theme
     gtk = {
         enable = true;
-        theme.name = "Gruvbox-Dark";
+        theme.name = "Gruvbox-Dark-BL-GS";
         theme.package = pkgs.gruvbox-gtk-theme;
     };
 
