@@ -27,6 +27,7 @@
         sassc
         gtk-engine-murrine
         gnome.gnome-themes-extra
+        gruvbox-gtk-theme
     ];
 
     # Theme
