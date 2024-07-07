@@ -29,6 +29,8 @@
         docker
         google-chrome
         signal-desktop
+        nix-output-monitor
+        nvd
     ];
 
     programs.git = {

@@ -6,15 +6,12 @@
 
 { 
     # TODO: 
-    # - Git access config (generate separate token) 
-    # - Automatic git commit and recompile on update.
     # - BT fix at startup
+    # - zsh + nix terminal w/ nix config
     # - How to run RustRover and Intellij (flakes? or just give write access)
     # - How to install steam + gaming related drivers?
     # - Configure docker (maybe only for flakes?)
     # - Add Gruvbox dark medium theme to os
-    # - zsh + nix terminal w/ nix config
-    # - 
 
     # [ OS ] #######################################################################################
 
