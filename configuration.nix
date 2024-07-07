@@ -50,6 +50,7 @@
     # System Packages
     environment.systemPackages = with pkgs; [];
 
+
     # [ PERIPHERIALS ] #########################################################################
 
     # Enable CUPS to print documents.
@@ -67,6 +68,7 @@
 
     # Enable BT
     hardware.bluetooth.enable = true;
+
 
     # [ LANGUAGE / LOCALE ] ######################################################################
 
