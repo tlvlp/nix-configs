@@ -97,7 +97,7 @@
 
     # [ Network ] #################################################################################
 
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "nixos";
     networking.networkmanager.enable = true;
 
 

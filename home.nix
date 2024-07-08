@@ -28,14 +28,13 @@
     # Gruvbox Theme
     gtk = {
         enable = true;
-        theme.name = "Gruvbox-Dark-BL-GS";
+        theme.name = "Gruvbox-Dark-BL";
         theme.package = pkgs.gruvbox-gtk-theme;
     };
     programs.vscode = {
       extensions = with pkgs.vscode-extensions; [
         jdinhlife.gruvbox
       ];
-      # In case extensions are not loaded, refer to https://github.com/nix-community/home-manager/issues/3507
       userSettings = {
         "workbench.colorTheme" = "Gruvbox Dark Hard";
       };
