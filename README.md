@@ -2,7 +2,6 @@
 Config for NixOS with Flakes
 
 ## Config Structure
-
 ```
 `flake.nix` is the main entrypoint of all the other configs
     ├── `configurations.nix` for the classic, channel-based system configs.
