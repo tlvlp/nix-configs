@@ -23,7 +23,9 @@
         vscode
         docker
 
-        gruvbox-gtk-theme
+        mc
+        superfile
+        nerdfonts
 
     ];
 
@@ -59,7 +61,7 @@
     home.file = {};
 
     # Environment variables
-    home.sessionVariables = {};
+    home.sessionVariables = {NEW_VAR = "hello from var";};
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
