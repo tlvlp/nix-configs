@@ -2,11 +2,14 @@
 Config for NixOS with Flakes
 
 ## Config Structure
+
+```
 `flake.nix` is the main entrypoint of all the other configs
     ├── `configurations.nix` for the classic, channel-based system configs.
     |       ├── `home.nix` for all the home directory stuff, eg. user-specific packages.
     |       └── `hardware-configuration.nix` auto-generated, for the hw-specific stuff (git-ignoring it breaks the build..) 
     └── `flake.lock` auto-generated with all dependency versions under `flake.nix`.
+```
 
 ## How to update
 Once the changes are saved, use the [pu.sh](pu.sh) script with a commit message as argument, or left blank for just bumping. 
