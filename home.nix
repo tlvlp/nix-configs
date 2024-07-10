@@ -40,7 +40,7 @@
         jdinhlife.gruvbox
       ];
       userSettings = {
-        "workbench.colorTheme" = "Gruvbox Dark Hard";
+        "workbench.colorTheme" = "Gruvbox Light Hard";
       };
     };
 
