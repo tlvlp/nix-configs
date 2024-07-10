@@ -26,17 +26,23 @@
         mc
         superfile
         nerdfonts
-
     ];
 
-    # Gruvbox Theme
     gtk = {
-        enable = true;
-        theme.name = "Gruvbox-Dark-BL-GS";
-        theme.package = pkgs.gruvbox-gtk-theme;
-        gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-        gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+      enable = true;
+      theme.name = "Gruvbox-Dark-BL-GS";
+      theme.package = pkgs.gruvbox-gtk-theme;
+      gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+      gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
     };
+
+
+    programs.zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+    };
+
     programs.vscode = {
       extensions = with pkgs.vscode-extensions; [
         jdinhlife.gruvbox

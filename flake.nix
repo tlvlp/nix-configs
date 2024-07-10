@@ -1,30 +1,29 @@
 {
-    description = "Nixos configuration";
+  description = "Home Manager configuration of tlvlp";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            # Ensure that home-manager uses the same dependency versions as the other flakes.
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+  inputs = {
+    # Specify the source of Home Manager and Nixpkgs.
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
 
-    outputs = { self, nixpkgs, ... } @ inputs : {
+  outputs = { nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      homeConfigurations."tlvlp" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-        nixosConfigurations.tux = nixpkgs.lib.nixosSystem {
-            
-            # System architecture (to select the correct variant form pkgs)
-            system = "x86_64-linux";
-            
-            # Pass down all the inputs as `specialArgs` to the sub-modules
-            specialArgs = { inherit inputs; };
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./home.nix ];
 
-            # Selected flakes and nix configs
-            modules = [
-                ./configuration.nix
-                inputs.home-manager.nixosModules.default
-            ];  
-        };
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+      };
     };
 }

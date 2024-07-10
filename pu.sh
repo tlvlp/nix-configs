@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "Rebuilding and deploying Nixos" 
-sudo nixos-rebuild switch --flake .#tux\
+echo "Deploying Home-Manager changes." 
+home-manager switch\
 && echo "Pushing changes to git origin"\
 && git add .\
 && if [ -z "$1" ]; then echo "Commit message was not set, using default!"; fi\

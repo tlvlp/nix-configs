@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 { 
     # [ OS ] #######################################################################################
@@ -40,15 +40,11 @@
         extraGroups = [ "networkmanager" "wheel" ];
     };
 
-    # Home manager
-    home-manager = {
-        # also pass inputs to home-manager modules
-        extraSpecialArgs = { inherit inputs; };
-        users = { "tlvlp" = import ./home.nix;};
-    };
-
-    # System Packages
-    environment.systemPackages = with pkgs; [ home-manager ];
+    # Install home manager
+    environment.systemPackages = with pkgs; [ 
+        git 
+        home-manager
+    ];
 
 
     # [ PERIPHERIALS ] #########################################################################
