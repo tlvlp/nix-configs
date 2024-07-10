@@ -9,6 +9,12 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # Enable flakes
+    nix = {
+      package = pkgs.nix;
+      settings.experimental-features = [ "nix-command" "flakes" ];
+    };
+
     # Packages
     home.packages = with pkgs; [
         
@@ -30,12 +36,11 @@
 
     gtk = {
       enable = true;
-      theme.name = "Gruvbox-Dark-BL-GS";
+      theme.name = "Gruvbox-Dark-BL";
       theme.package = pkgs.gruvbox-gtk-theme;
       gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
       gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
     };
-
 
     programs.zsh = {
       enable = true;

@@ -1,12 +1,24 @@
 # NixOS Configs
-Config for NixOS with Flakes
+Configs for NixOS with a standalone Home-manager.
 
-# OS Rebuild
+## Create symlinks for a fresh install
+```sh
+sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration-backup.nix
+sudo ln -s $(pwd)/configuration.nix /etc/nixos/configuration.nix
+mv ~/.config/home-manager/ ~/.config/home-manager-backup
+mkdir ~/.config/home-manager/
+ln -s $(pwd)/flake.nix ~/.config/home-manager/flake.nix
+ln -s $(pwd)/flake.lock ~/.config/home-manager/flake.lock
+ln -s $(pwd)/home.nix ~/.config/home-manager/home.nix
+```
+
+## OS Rebuild
+Only required if the `configuration.nix` changes.
 ```sh
 sudo nixos-rebuild switch
 ```
 
-# Home-manager deploy changes
+## Deploy all Home-manager changes
 ```sh
 home-manger swtich
 ```
