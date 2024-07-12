@@ -9,12 +9,6 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # Enable flakes
-    nix = {
-      package = pkgs.nix;
-      settings.experimental-features = [ "nix-command" "flakes" ];
-    };
-
     # Packages
     home.packages = with pkgs; [
         

@@ -7,13 +7,13 @@
 { 
     # [ OS ] #######################################################################################
     
-    system.stateVersion = "24.05"; # RTFM before changing!
-    
     imports =
     [ # Include the results of the hardware scan.
-        ./hardware-configuration.nix
+        /etc/nixos/hardware-configuration.nix
     ];
-    
+       
+    system.stateVersion = "24.05"; # RTFM before changing!
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -36,6 +36,9 @@
         description = "tlvlp";
         extraGroups = [ "networkmanager" "wheel" ];
     };
+
+    # Enable Flakes
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Install home manager
     environment.systemPackages = with pkgs; [ 
