@@ -60,7 +60,10 @@
         jdinhlife.gruvbox
       ];
       userSettings = {
-        "workbench.colorTheme" = "Gruvbox Dark Hard";
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
+        "explorer.confirmDelete" = false;
+        "git.enableSmartCommit" = true;
+
       };
     };
 
