@@ -17,20 +17,19 @@
         signal-desktop
 
         #dev
-        git
         jetbrains.rust-rover
         jetbrains.idea-community
-        vscode
         docker
 
         mc
         superfile
         nerdfonts
+
     ];
 
     gtk = {
       enable = true;
-      theme.name = "Gruvbox-Dark-BL";
+      theme.name = "Gruvbox-Dark-BL-GS";
       theme.package = pkgs.gruvbox-gtk-theme;
       gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
       gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
@@ -43,15 +42,28 @@
     };
 
     programs.vscode = {
+      enable = true;
       extensions = with pkgs.vscode-extensions; [
+        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
+        # nix
+        bbenoist.nix
+
+        # git
+        donjayamanne.githistory
+        eamodio.gitlens
+
+        # general
+        davidanson.vscode-markdownlint
+        k--kato.intellij-idea-keybindings
+
+        # theme
         jdinhlife.gruvbox
       ];
       userSettings = {
-        "workbench.colorTheme" = "Gruvbox Light Hard";
+        "workbench.colorTheme" = "Gruvbox Dark Hard";
       };
     };
 
-    # Git
     programs.git = {
         enable = true;
         userName = "Peter Veres";
