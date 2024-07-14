@@ -22,18 +22,8 @@
         docker
 
         mc
-        superfile
-        nerdfonts
 
     ];
-
-    gtk = {
-      enable = true;
-      theme.name = "Gruvbox-Dark-BL-GS";
-      theme.package = pkgs.gruvbox-gtk-theme;
-      gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-      gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-    };
 
     programs.zsh = {
       enable = true;
@@ -77,11 +67,43 @@
         };
     };
 
+    programs.kitty = {
+      enable = true;
+      shellIntegration.enableZshIntegration = true;
+      theme = "Gruvbox Dark";
+    };
+
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      plugins = with pkgs.vimPlugins; [
+        # TODO Add plugins
+      ];
+    };
+
+
+    gtk = {
+      enable = true;
+      theme.name = "Gruvbox-Dark-BL-GS";
+      theme.package = pkgs.gruvbox-gtk-theme;
+      gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+      gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+    };
+
     # Manage plain files. Stored in and and symlinked to the Nix store. 
     home.file = {};
 
     # Environment variables
-    home.sessionVariables = {NEW_VAR = "hello from var";};
+    home.sessionVariables = {
+      NEW_VAR = "hello from var";
+      EDITOR = "nvim";
+      BROWSER = "google-chrome";
+      TERMINAL = "kitty";
+      SHELL="zsh";
+    };
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
