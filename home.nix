@@ -9,53 +9,27 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # Environment variables
+    home.sessionVariables = {
+      EDITOR = "nvim";
+      BROWSER = "google-chrome";
+      TERMINAL = "alacritty";
+      SHELL="zsh";
+    };
+
     # Packages
     home.packages = with pkgs; [
-        
+        # essential
         cowsay
+        # comms
         google-chrome
         signal-desktop
-
-        #dev
+        # dev
         jetbrains.rust-rover
         jetbrains.idea-community
         docker
-
         mc
-
     ];
-
-    programs.zsh = {
-      enable = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-    };
-
-    programs.vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
-        # nix
-        bbenoist.nix
-
-        # git
-        donjayamanne.githistory
-        eamodio.gitlens
-
-        # general
-        davidanson.vscode-markdownlint
-        k--kato.intellij-idea-keybindings
-
-        # theme
-        jdinhlife.gruvbox
-      ];
-      userSettings = {
-        "workbench.colorTheme" = "Gruvbox Dark Medium";
-        "explorer.confirmDelete" = false;
-        "git.enableSmartCommit" = true;
-
-      };
-    };
 
     programs.git = {
         enable = true;
@@ -67,10 +41,46 @@
         };
     };
 
-    programs.kitty = {
+    programs.zsh = {
       enable = true;
-      shellIntegration.enableZshIntegration = true;
-      theme = "Gruvbox Dark";
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      shellAliases = {
+        ll = "ls -1halF";
+      };
+      # TODO configure addons and functionality
+    };
+
+    programs.alacritty = {
+      enable = true;
+      settings.shell.program = "${pkgs.zsh}/bin/zsh";
+      settings.colors = {
+        # Colors (Gruvbox Material Medium Dark)
+        primary = { 
+          background = "#282828";
+          foreground = "#d4be98";
+        };
+        normal = {
+          black   = "#3c3836";
+          red     = "#ea6962";
+          green   = "#a9b665";
+          yellow  = "#d8a657";
+          blue    = "#7daea3";
+          magenta = "#d3869b";
+          cyan    = "#89b482";
+          white   = "#d4be98";
+        };
+        bright = {
+          black   = "#3c3836";
+          red     = "#ea6962";
+          green   = "#a9b665";
+          yellow  = "#d8a657";
+          blue    = "#7daea3";
+          magenta = "#d3869b";
+          cyan    = "#89b482";
+          white   = "#d4be98";
+        };
+      };
     };
 
     programs.neovim = {
@@ -84,6 +94,28 @@
       ];
     };
 
+    programs.vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
+        # nix
+        bbenoist.nix
+        # git
+        donjayamanne.githistory
+        eamodio.gitlens
+        # general
+        davidanson.vscode-markdownlint
+        k--kato.intellij-idea-keybindings
+        # theme
+        jdinhlife.gruvbox
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
+        "explorer.confirmDelete" = false;
+        "git.enableSmartCommit" = true;
+
+      };
+    };
 
     gtk = {
       enable = true;
@@ -95,15 +127,6 @@
 
     # Manage plain files. Stored in and and symlinked to the Nix store. 
     home.file = {};
-
-    # Environment variables
-    home.sessionVariables = {
-      NEW_VAR = "hello from var";
-      EDITOR = "nvim";
-      BROWSER = "google-chrome";
-      TERMINAL = "kitty";
-      SHELL="zsh";
-    };
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
