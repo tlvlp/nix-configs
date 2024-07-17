@@ -17,6 +17,8 @@
       SHELL="zsh";
     };
 
+    fonts.fontconfig.enable = true;
+
     # Packages
     home.packages = with pkgs; [
         # essential
@@ -29,6 +31,9 @@
         jetbrains.idea-community
         docker
         mc
+        # zsh
+        zsh-powerlevel10k 
+        meslo-lgs-nf
     ];
 
     programs.git = {
@@ -46,9 +51,28 @@
       autosuggestion.enable = true;
       enableCompletion = true;
       shellAliases = {
-        ll = "ls -1halF";
+        ll = "ls -1halF --color";
       };
-      # TODO configure addons and functionality
+      zplug = {
+        # Plugin manager for zsh
+        enable = true;
+        plugins = [{
+          name = "romkatv/powerlevel10k";
+          tags = [ "as:theme" "depth:1" ];
+        }];
+      };
+      plugins = [
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+        {
+          name = "powerlevel10k-config";
+          src = ./themes;
+          file = ".p10k.zsh";
+        }
+      ];
     };
 
     programs.alacritty = {
@@ -81,6 +105,10 @@
           white   = "#d4be98";
         };
       };
+      settings.window.startup_mode = "Maximized";
+      settings.window.opacity = 0.9;
+      settings.window.blur = true;
+      settings.font.size = 12;
     };
 
     programs.neovim = {

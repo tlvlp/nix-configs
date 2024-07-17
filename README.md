@@ -5,8 +5,10 @@ Configs for NixOS with a standalone Home-manager.
 ## Fresh install: Create symlinks
 
 ```sh
+# System configs
 sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration-backup.nix
 sudo ln -s $(pwd)/configuration.nix /etc/nixos/configuration.nix
+# Home-manager
 mv ~/.config/home-manager/ ~/.config/home-manager-backup
 mkdir ~/.config/home-manager/
 ln -s $(pwd)/flake.nix ~/.config/home-manager/flake.nix
