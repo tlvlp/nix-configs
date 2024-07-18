@@ -16,7 +16,7 @@
       TERMINAL = "alacritty";
       SHELL="zsh";
     };
-
+    
     fonts.fontconfig.enable = true;
 
     # Packages
@@ -32,7 +32,7 @@
         docker
         mc
         # zsh
-        zsh-powerlevel10k 
+        zsh-powerlevel10k
         meslo-lgs-nf
     ];
 
@@ -46,15 +46,27 @@
         };
     };
 
+    # Fuzzy finder
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     programs.zsh = {
       enable = true;
-      autosuggestion.enable = true;
+      autocd = true;
       enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+      history.size = 5000;
       shellAliases = {
         ll = "ls -1halF --color";
       };
+      initExtra = ''
+        eval  "$(fzf --zsh)"
+      '';
+      # ZSH Plugin manager
       zplug = {
-        # Plugin manager for zsh
         enable = true;
         plugins = [{
           name = "romkatv/powerlevel10k";
@@ -76,6 +88,7 @@
     };
 
     programs.alacritty = {
+      # https://alacritty.org/config-alacritty.html
       enable = true;
       settings.shell.program = "${pkgs.zsh}/bin/zsh";
       settings.colors = {
@@ -105,10 +118,11 @@
           white   = "#d4be98";
         };
       };
-      settings.window.startup_mode = "Maximized";
+      settings.window.startup_mode = "Windowed";
+      settings.window.dimensions = { columns = 150; lines = 40; };
       settings.window.opacity = 0.9;
       settings.window.blur = true;
-      settings.font.size = 12;
+      settings.font.size = 13;
     };
 
     programs.neovim = {
