@@ -46,10 +46,24 @@
         };
     };
 
-    # Fuzzy finder
+    # Fuzzy Finder
     programs.fzf = {
       enable = true;
-      enableZshIntegration = true;
+      enableZshIntegration = true; # ctrl + r
+      colors = {
+        fg = "#ebdbb2";
+        bg = "#282828";
+        hl = "#fabd2f";
+        "fg+" = "#ebdbb2";
+        "bg+" = "#3c3836";
+        "hl+" = "#fabd2f";
+        info = "#83a598";
+        prompt = "#bdae93";
+        spinner = "#fabd2f";
+        pointer = "#83a598";
+        marker = "#fe8019";
+        header = "#665c54";
+      };
     };
 
     programs.zsh = {
@@ -63,7 +77,9 @@
         ll = "ls -1halF --color";
       };
       initExtra = ''
-        eval  "$(fzf --zsh)"
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+        zstyle ':completion:*' menu no
+        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' 
       '';
       # ZSH Plugin manager
       zplug = {
@@ -71,6 +87,9 @@
         plugins = [{
           name = "romkatv/powerlevel10k";
           tags = [ "as:theme" "depth:1" ];
+        }
+        {
+          name = "Aloxaf/fzf-tab";
         }];
       };
       plugins = [
@@ -159,7 +178,9 @@
       };
     };
 
+
     gtk = {
+      # Does not work yet!
       enable = true;
       theme.name = "Gruvbox-Dark-BL-GS";
       theme.package = pkgs.gruvbox-gtk-theme;
