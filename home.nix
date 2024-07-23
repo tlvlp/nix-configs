@@ -51,18 +51,8 @@
       enable = true;
       enableZshIntegration = true; # ctrl + r
       colors = {
-        fg = "#ebdbb2";
-        bg = "#282828";
-        hl = "#fabd2f";
-        "fg+" = "#ebdbb2";
-        "bg+" = "#3c3836";
-        "hl+" = "#fabd2f";
-        info = "#83a598";
-        prompt = "#bdae93";
-        spinner = "#fabd2f";
-        pointer = "#83a598";
-        marker = "#fe8019";
-        header = "#665c54";
+        fg = "#ebdbb2"; bg = "#282828"; hl = "#fabd2f"; "fg+" = "#ebdbb2"; "bg+" = "#3c3836"; "hl+" = "#fabd2f";
+        info = "#83a598"; prompt = "#bdae93"; spinner = "#fabd2f"; pointer = "#83a598"; marker = "#fe8019"; header = "#665c54";
       };
     };
 
@@ -84,13 +74,10 @@
       # ZSH Plugin manager
       zplug = {
         enable = true;
-        plugins = [{
-          name = "romkatv/powerlevel10k";
-          tags = [ "as:theme" "depth:1" ];
-        }
-        {
-          name = "Aloxaf/fzf-tab";
-        }];
+        plugins = [
+          { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ];}
+          { name = "Aloxaf/fzf-tab";}
+        ];
       };
       plugins = [
         {
@@ -117,24 +104,12 @@
           foreground = "#d4be98";
         };
         normal = {
-          black   = "#3c3836";
-          red     = "#ea6962";
-          green   = "#a9b665";
-          yellow  = "#d8a657";
-          blue    = "#7daea3";
-          magenta = "#d3869b";
-          cyan    = "#89b482";
-          white   = "#d4be98";
+          black = "#3c3836"; red = "#ea6962"; green = "#a9b665"; yellow = "#d8a657"; 
+          blue = "#7daea3"; magenta = "#d3869b"; cyan = "#89b482"; white  = "#d4be98";
         };
         bright = {
-          black   = "#3c3836";
-          red     = "#ea6962";
-          green   = "#a9b665";
-          yellow  = "#d8a657";
-          blue    = "#7daea3";
-          magenta = "#d3869b";
-          cyan    = "#89b482";
-          white   = "#d4be98";
+          black = "#3c3836"; red = "#ea6962"; green = "#a9b665"; yellow = "#d8a657"; 
+          blue = "#7daea3"; magenta = "#d3869b"; cyan = "#89b482"; white  = "#d4be98";
         };
       };
       settings.window.startup_mode = "Windowed";
@@ -177,7 +152,6 @@
 
       };
     };
-
 
     gtk = {
       # Does not work yet!
