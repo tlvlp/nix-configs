@@ -55,6 +55,11 @@
       };
     };
 
+    programs.yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     programs.zsh = {
       enable = true;
       autocd = true;
@@ -65,6 +70,8 @@
       shellAliases = {
         ll = "ls -1halF --color";
         z = "zellij";
+        c = "clear";
+        hms = "home-manager switch";
       };
       initExtra = ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
