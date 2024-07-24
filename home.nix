@@ -45,9 +45,8 @@
             safe.directory = "/etc/nixos";
         };
     };
-
-    # Fuzzy Finder
-    programs.fzf = {
+    
+    programs.fzf = { # Fuzzy Finder
       enable = true;
       enableZshIntegration = true; # ctrl + r
       colors = {
@@ -65,6 +64,7 @@
       history.size = 5000;
       shellAliases = {
         ll = "ls -1halF --color";
+        z = "zellij";
       };
       initExtra = ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -93,16 +93,19 @@
       ];
     };
 
-    programs.alacritty = {
+    programs.zellij = { # Terminal multiplexer
+      enable = true;
+      # enableZshIntegration = true; # opens a zellij session on start
+      settings = { theme = "gruvbox-dark";};
+    };
+
+    programs.alacritty = { # Terminal
       # https://alacritty.org/config-alacritty.html
       enable = true;
       settings.shell.program = "${pkgs.zsh}/bin/zsh";
       settings.colors = {
         # Colors (Gruvbox Material Medium Dark)
-        primary = { 
-          background = "#282828";
-          foreground = "#d4be98";
-        };
+        primary = { background = "#282828"; foreground = "#d4be98"; };
         normal = {
           black = "#3c3836"; red = "#ea6962"; green = "#a9b665"; yellow = "#d8a657"; 
           blue = "#7daea3"; magenta = "#d3869b"; cyan = "#89b482"; white  = "#d4be98";
@@ -153,14 +156,13 @@
       };
     };
 
-    gtk = {
-      # Does not work yet!
-      enable = true;
-      theme.name = "Gruvbox-Dark-BL-GS";
-      theme.package = pkgs.gruvbox-gtk-theme;
-      gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-      gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-    };
+    # gtk = { # OS theming - Does not work yet!
+    #   enable = true;
+    #   theme.name = "Gruvbox-Dark-BL-GS";
+    #   theme.package = pkgs.gruvbox-gtk-theme;
+    #   gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+    #   gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
+    # };
 
     # Manage plain files. Stored in and and symlinked to the Nix store. 
     home.file = {};
