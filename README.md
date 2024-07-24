@@ -31,6 +31,8 @@ home-manger swtich
 
 ### Update packages
 
+Need to be run in this repo's dir.
+
 ```sh
 nix flake update\
 && home-manager switch
