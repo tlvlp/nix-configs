@@ -62,7 +62,6 @@ sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix
 ## Todo
 
 - Add Gruvbox dark medium theme to os
-- zsh + nix terminal w/ nix config
 - How to run RustRover and Intellij (flakes? or just give write access)
 - How to install steam + gaming related drivers?
 - Configure docker (only for flakes?)
