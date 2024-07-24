@@ -2,6 +2,11 @@
 
 Configs for NixOS with a standalone Home-manager.
 
+## Package search
+
+[NixOS](https://search.nixos.org/packages)
+[MyNixOS](https://mynixos.com/packages)
+
 ## Fresh install: Create symlinks
 
 ```sh
