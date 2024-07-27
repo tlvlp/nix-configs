@@ -11,7 +11,7 @@ Configs for NixOS with a standalone Home-manager.
 
 ```sh
 # System configs
-sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration-backup.nix
+sudo mv /etc/nixos/configuration.nix /etc/nixos/configuration.nix-backup
 sudo ln -s $(pwd)/configuration.nix /etc/nixos/configuration.nix
 # Home-manager
 mv ~/.config/home-manager/ ~/.config/home-manager-backup

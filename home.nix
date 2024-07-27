@@ -163,13 +163,7 @@
       };
     };
 
-    # gtk = { # OS theming - Does not work yet!
-    #   enable = true;
-    #   theme.name = "Gruvbox-Dark-BL-GS";
-    #   theme.package = pkgs.gruvbox-gtk-theme;
-    #   gtk3.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-    #   gtk4.extraConfig = { Settings = "gtk-application-prefer-dark-theme = 1";};
-    # };
+    dconf.settings = {"org/gnome/desktop/interface" = {enable-hot-corners = false;};};
 
     # Manage plain files. Stored in and and symlinked to the Nix store. 
     home.file = {};
