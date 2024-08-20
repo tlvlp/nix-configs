@@ -28,6 +28,8 @@
         signal-desktop
         # dev
         jetbrains.rust-rover
+        rustup
+        rustc
         jetbrains.idea-community
         docker
         mc
@@ -55,7 +57,7 @@
       };
     };
 
-    programs.yazi = {
+    programs.yazi = { # File manager
       enable = true;
       enableZshIntegration = true;
     };
@@ -142,14 +144,23 @@
 
     programs.vscode = {
       enable = true;
+      mutableExtensionsDir = false;
       extensions = with pkgs.vscode-extensions; [
         # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
+        # If the extensions are not loaded, remove ~/.vscode/extensions!
         # nix
         bbenoist.nix
         # git
         donjayamanne.githistory
         eamodio.gitlens
+        # rust
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
+        vadimcn.vscode-lldb
+        fill-labs.dependi
+        usernamehw.errorlens
         # general
+        vscodevim.vim
         davidanson.vscode-markdownlint
         k--kato.intellij-idea-keybindings
         # theme
@@ -159,7 +170,6 @@
         "workbench.colorTheme" = "Gruvbox Dark Medium";
         "explorer.confirmDelete" = false;
         "git.enableSmartCommit" = true;
-
       };
     };
 
