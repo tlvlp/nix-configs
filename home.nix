@@ -30,6 +30,7 @@
         jetbrains.rust-rover
         rustup
         rustc
+        gcc
         jetbrains.idea-community
         docker
         mc
