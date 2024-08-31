@@ -12,7 +12,7 @@
     # Environment variables
     home.sessionVariables = {
       EDITOR = "nvim";
-      BROWSER = "google-chrome";
+      BROWSER = "brave";
       TERMINAL = "alacritty";
       SHELL="zsh";
     };
@@ -25,13 +25,14 @@
         cowsay
         # comms
         google-chrome
+	brave
         signal-desktop
         # dev
+        jetbrains.idea-community
         jetbrains.rust-rover
         rustup
         rustc
         gcc
-        jetbrains.idea-community
         docker
         mc
         # zsh
