@@ -23,6 +23,8 @@
     home.packages = with pkgs; [
         # essential
         cowsay
+	# media
+	spotify
         # comms
         google-chrome
 	brave
@@ -39,6 +41,15 @@
         zsh-powerlevel10k
         meslo-lgs-nf
     ];
+
+
+    programs.btop = {
+	enable = true;
+	settings = {
+		color_theme = "gruvbox_material_dark";
+	};
+    };
+	
 
     programs.git = {
         enable = true;
@@ -143,6 +154,10 @@
         # TODO Add plugins
       ];
     };
+
+    programs.helix = {
+    	enable = true;
+    }; 
 
     programs.vscode = {
       enable = true;
