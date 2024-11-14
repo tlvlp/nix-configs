@@ -50,7 +50,6 @@
 	};
     };
 	
-
     programs.git = {
         enable = true;
         userName = "Peter Veres";
