@@ -4,7 +4,7 @@
     # User
     home.username = "tlvlp";
     home.homeDirectory = "/home/tlvlp";
-    home.stateVersion = "24.05"; # RTFM before changing!
+    home.stateVersion = "24.11"; # RTFM before changing!
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
