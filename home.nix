@@ -123,7 +123,7 @@
     programs.alacritty = { # Terminal
       # https://alacritty.org/config-alacritty.html
       enable = true;
-      settings.shell.program = "${pkgs.zsh}/bin/zsh";
+      settings.terminal.shell.program = "${pkgs.zsh}/bin/zsh";
       settings.colors = {
         # Colors (Gruvbox Material Medium Dark)
         primary = { background = "#282828"; foreground = "#d4be98"; };

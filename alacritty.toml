@@ -1,0 +1,40 @@
+[colors.bright]
+black = "#3c3836"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#d4be98"
+yellow = "#d8a657"
+
+[colors.normal]
+black = "#3c3836"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#d4be98"
+yellow = "#d8a657"
+
+[colors.primary]
+background = "#282828"
+foreground = "#d4be98"
+
+[font]
+size = 13
+
+[terminal.shell]
+program = "/nix/store/m7l6yzmflrf9hjs8707lk9nkhi6f73n1-zsh-5.9/bin/zsh"
+
+[window]
+blur = true
+opacity = 0.9
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 150
+lines = 40
+
+[terminal]
