@@ -21,7 +21,7 @@
     # Enable the X11 windowing system.
     services.xserver.enable = true;
     services.xserver.videoDrivers = [ "amdgpu" ];
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     
     # Enable the GNOME Desktop Environment.
     services.xserver.displayManager.gdm.enable = true;
