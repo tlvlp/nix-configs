@@ -5,14 +5,14 @@
 { config, pkgs, ... }:
 
 { 
-    # [ OS ] #######################################################################################
+    # [ OS ] ######################################################################################
     
     imports =
     [ # Include the results of the hardware scan.
         /etc/nixos/hardware-configuration.nix
     ];
        
-    system.stateVersion = "24.05"; # RTFM before changing!
+    system.stateVersion = "24.11"; # RTFM before changing!
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -20,6 +20,8 @@
 
     # Enable the X11 windowing system.
     services.xserver.enable = true;
+    services.xserver.videoDrivers = [ "amdgpu" ];
+    hardware.opengl.enable = true;
     
     # Enable the GNOME Desktop Environment.
     services.xserver.displayManager.gdm.enable = true;
@@ -45,6 +47,7 @@
         git 
         home-manager
 	mesa
+	vulkan-loader
     ];
 
 
