@@ -30,7 +30,7 @@
 	brave
         signal-desktop
         # dev
-        jetbrains.idea-community
+        #jetbrains.idea-community
         jetbrains.rust-rover
         rustup
         rustc
