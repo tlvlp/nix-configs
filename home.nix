@@ -27,7 +27,8 @@
 	spotify
         # comms
         google-chrome
-	brave
+        brave
+	firefox
         signal-desktop
         # dev
         #jetbrains.idea-community

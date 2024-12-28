@@ -19,13 +19,22 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Enable the X11 windowing system.
-    services.xserver.enable = true;
-    services.xserver.videoDrivers = [ "amdgpu" ];
-    hardware.graphics.enable = true;
-    
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    services.xserver = {
+        enable = true;
+        videoDrivers = [ "amdgpu" ];
+        xkb.layout = "us";
+        xkb.variant = "";
+        # Enable the GNOME Desktop Environment.
+        displayManager.gdm.enable = true;
+        desktopManager.gnome.enable = true;
+    };
+
+    hardware = {
+        opengl.enable = true;
+        #opengl.drisupport = true;
+	#video.amdgpu.enable = true;
+    };
+
 
     # [ USERS / APPS ] ################################################################################
 
@@ -42,12 +51,15 @@
     # Enable Flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    # Install home manager
+    # Install packages
     environment.systemPackages = with pkgs; [ 
         git 
-        home-manager
-	mesa
+	home-manager
+        mesa
+	mesa-demos
 	vulkan-loader
+	vulkan-tools
+	#llvmPackages
     ];
 
 
@@ -89,11 +101,6 @@
         LC_TIME = "en_GB.UTF-8";
     };
 
-    # Configure keymap in X11
-    services.xserver = {
-        xkb.layout = "us";
-        xkb.variant = "";
-    };
 
     # [ Network ] #################################################################################
 
