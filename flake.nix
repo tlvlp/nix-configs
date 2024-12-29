@@ -15,6 +15,13 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+      nixosConfigurations."tlvlp" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
       homeConfigurations."tlvlp" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
