@@ -30,9 +30,7 @@
     };
 
     hardware = {
-        opengl.enable = true;
-        #opengl.drisupport = true;
-	#video.amdgpu.enable = true;
+        graphics.enable = true;
     };
 
 
