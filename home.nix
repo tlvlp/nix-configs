@@ -23,12 +23,10 @@
     home.packages = with pkgs; [
         # essential
         cowsay
-	# media
-	spotify
         # comms
         google-chrome
         brave
-	firefox
+	      firefox
         signal-desktop
         # dev
         #jetbrains.idea-community
@@ -38,6 +36,7 @@
         gcc
         docker
         mc
+        wireshark
         # zsh
         zsh-powerlevel10k
         meslo-lgs-nf
