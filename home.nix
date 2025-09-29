@@ -23,11 +23,11 @@
     home.packages = with pkgs; [
         # essential
         cowsay
-        # comms
-        google-chrome
+        # general
         brave
-	      firefox
         signal-desktop
+        obsidian
+        libreoffice-qt6-still
         # dev
         #jetbrains.idea-community
         jetbrains.rust-rover
@@ -53,7 +53,7 @@
     programs.git = {
         enable = true;
         userName = "Peter Veres";
-        userEmail = "tllvllp@gmail.com";
+        userEmail = "peter@tlvlp.com";
         extraConfig = {
             init.defaultBranch = "main";
             safe.directory = "/etc/nixos";
