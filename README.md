@@ -62,10 +62,3 @@ Use the explicit path (that also fixes the default value)
 ```sh
 sudo nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
-
-## Todo
-
-- Add Gruvbox dark medium theme to os
-- How to run RustRover and Intellij (flakes? or just give write access)
-- How to install steam + gaming related drivers?
-- Configure docker (only for flakes?)
