@@ -32,6 +32,7 @@
         android-tools
         android-udev-rules
         usbutils
+        openssh
         #jetbrains.idea-community
         jetbrains.rust-rover
         rustup
