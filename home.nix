@@ -30,6 +30,7 @@
         libreoffice-qt6-still
         # dev
         android-tools
+        android-udev-rules
         usbutils
         #jetbrains.idea-community
         jetbrains.rust-rover
