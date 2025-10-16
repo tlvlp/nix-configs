@@ -43,7 +43,7 @@
     users.users.tlvlp = {
         isNormalUser = true;
         description = "tlvlp";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "adb" "kvm"];
     };
 
     # Enable Flakes

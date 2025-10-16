@@ -29,6 +29,7 @@
         obsidian
         libreoffice-qt6-still
         # dev
+        android-tools
         #jetbrains.idea-community
         jetbrains.rust-rover
         rustup
@@ -42,12 +43,11 @@
         meslo-lgs-nf
     ];
 
-
     programs.btop = {
-	enable = true;
-	settings = {
-		color_theme = "gruvbox_material_dark";
-	};
+      enable = true;
+      settings = {
+        color_theme = "gruvbox_material_dark";
+      };
     };
 	
     programs.git = {
@@ -195,4 +195,5 @@
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
+    
 }
