@@ -47,8 +47,8 @@ nix-collect-garbage
 ### OS Rebuild
 
 Only required if the `configuration.nix` or `flake.nix` changes.
-> Note the --impure flag is only required as the hardware-config in the configuration.nix is referenced externally 
-(as it belongs to the machine) and it goes agains the purity rules of Flakes. 
+> Note the --impure flag is only required as the hardware-config in the configuration.nix is referenced externally
+(as it belongs to the machine) and it goes agains the purity rules of Flakes.
 
 ```sh
 sudo nixos-rebuild switch --impure --flake .#tlvlp
