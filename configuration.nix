@@ -52,12 +52,12 @@
     # Install packages
     environment.systemPackages = with pkgs; [ 
         git 
-	home-manager
+        home-manager
         mesa
-	mesa-demos
-	vulkan-loader
-	vulkan-tools
-	#llvmPackages
+        mesa-demos
+        vulkan-loader
+        vulkan-tools
+        #llvmPackages
     ];
 
 
