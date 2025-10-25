@@ -46,6 +46,7 @@
         # zsh
         zsh-powerlevel10k
         meslo-lgs-nf
+        fastfetch
     ];
 
     programs.btop = {
