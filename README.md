@@ -32,11 +32,11 @@ home-manger swtich
 ### Update packages
 
 Need to be run in this repo's dir.
+Note that a `nixos-rebuild` or a `nix-store --verify` might be needed in some cases (see related sections).
 
 ```sh
 nix flake update\
 && home-manager switch\
-&& nixos-rebuild switch --upgrade --impure --flake .#tlvlp
 ```
 
 
@@ -67,13 +67,13 @@ Only required for:
 (as it belongs to the machine) and it goes agains the purity rules of Flakes.
 
 ```sh
-nixos-rebuild switch --impure --flake .#tlvlp
+sudo nixos-rebuild switch --impure --flake .#tlvlp
 ```
 
 If it componlylains about : `Nixos-config not found in Nix search path` use the explicit path (that also fixes the default value)
 
 ```sh
-nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
+sudo nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
 
 ### Fix packages
