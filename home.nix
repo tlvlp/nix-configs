@@ -4,7 +4,7 @@
     # User
     home.username = "tlvlp";
     home.homeDirectory = "/home/tlvlp";
-    home.stateVersion = "24.05"; # RTFM before changing!
+    home.stateVersion = "25.05"; # RTFM before changing!
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -43,7 +43,6 @@
         docker
         mc
         wireshark
-        # zsh
         zsh-powerlevel10k
         meslo-lgs-nf
         fastfetch
@@ -93,7 +92,7 @@
         c = "clear";
         hms = "home-manager switch";
       };
-      initExtra = ''
+      initContent = ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
         zstyle ':completion:*' menu no
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' 
