@@ -23,6 +23,7 @@
     home.packages = with pkgs; [
         # essential
         cowsay
+        sl
         # general
         brave
         signal-desktop
