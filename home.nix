@@ -167,7 +167,7 @@
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = false;
-      extensions = with pkgs.vscode-extensions; [
+      profiles.default.extensions = with pkgs.vscode-extensions; [
         # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
         # If the extensions are not loaded, remove ~/.vscode/extensions!
         # nix
@@ -187,7 +187,7 @@
         # theme
         jdinhlife.gruvbox
       ];
-      userSettings = {
+      profiles.default.userSettings = {
         "workbench.colorTheme" = "Gruvbox Dark Medium";
         "explorer.confirmDelete" = false;
         "git.enableSmartCommit" = true;

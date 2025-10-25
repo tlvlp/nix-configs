@@ -39,21 +39,17 @@ nix flake update\
 && home-manager switch\
 ```
 
-
 ### Upgrade the OS version
 
 Add the channel of the new OS version, e.g.:
-```
+
+```sh
 nix-channel --add https://channels.nixos.org/nixos-25.05 nixos
 ```
 
+Update the OS version in `home.nix`, `flake.nix` and `configuration.nix`
+
 See https://nixos.org/manual/nixos/stable/index.html#sec-upgrading
-
-### Run garbage collector
-
-```sh
-nix-collect-garbage
-```
 
 ### OS Rebuild
 
@@ -76,14 +72,16 @@ If it componlylains about : `Nixos-config not found in Nix search path` use the 
 sudo nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
 
-The major update from 24.11 to 25.05 didn't work with the flake options, but it required the explicit config path:
-
-```sh
-sudo nixos-rebuild switch --upgrade -I nixos-config=/etc/nixos/configuration.nix
-```
-
 ### Fix packages
 
-```
+```sh
 nix-store --verify --check-contents --repair
+```
+
+### Run garbage collector
+
+Cleans up all the unused / redundant downloads.
+
+```sh
+nix-collect-garbage
 ```

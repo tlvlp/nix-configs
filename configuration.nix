@@ -12,7 +12,7 @@
         /etc/nixos/hardware-configuration.nix
     ];
        
-    system.stateVersion = "24.05"; # RTFM before changing!
+    system.stateVersion = "25.05"; # RTFM before changing!
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
