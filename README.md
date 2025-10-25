@@ -76,6 +76,12 @@ If it componlylains about : `Nixos-config not found in Nix search path` use the 
 sudo nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
 
+The major update from 24.11 to 25.05 didn't work with the flake options, but it required the explicit config path:
+
+```sh
+sudo nixos-rebuild switch --upgrade -I nixos-config=/etc/nixos/configuration.nix
+```
+
 ### Fix packages
 
 ```
