@@ -75,3 +75,9 @@ If it componlylains about : `Nixos-config not found in Nix search path` use the 
 ```sh
 nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
+
+### Fix packages
+
+```
+nix-store --verify --check-contents --repair
+```
