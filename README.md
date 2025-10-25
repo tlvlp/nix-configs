@@ -35,8 +35,19 @@ Need to be run in this repo's dir.
 
 ```sh
 nix flake update\
-&& home-manager switch
+&& home-manager switch\
+&& nixos-rebuild switch --upgrade --impure --flake .#tlvlp
 ```
+
+
+### Upgrade the OS version
+
+Add the channel of the new OS version, e.g.:
+```
+nix-channel --add https://channels.nixos.org/nixos-25.05 nixos
+```
+
+See https://nixos.org/manual/nixos/stable/index.html#sec-upgrading
 
 ### Run garbage collector
 
@@ -46,19 +57,21 @@ nix-collect-garbage
 
 ### OS Rebuild
 
-Only required if the `configuration.nix` or `flake.nix` changes.
-> Note the --impure flag is only required as the hardware-config in the configuration.nix is referenced externally
+Only required for:
+
+- Changes in `configuration.nix`.
+- Changes in `flake.nix`.
+- OS version/channel update
+
+> Note the --impure flag is required as the hardware-config in the configuration.nix is referenced externally
 (as it belongs to the machine) and it goes agains the purity rules of Flakes.
 
 ```sh
-sudo nixos-rebuild switch --impure --flake .#tlvlp
+nixos-rebuild switch --impure --flake .#tlvlp
 ```
 
-If it complains about :
-> Nixos-config not found in Nix search path
-
-Use the explicit path (that also fixes the default value)
+If it componlylains about : `Nixos-config not found in Nix search path` use the explicit path (that also fixes the default value)
 
 ```sh
-sudo nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
+nixos-rebuild switch --impure --flake .#tlvlp -I nixos-config=/etc/nixos/configuration.nix
 ```
