@@ -29,6 +29,7 @@
         signal-desktop
         obsidian
         libreoffice-qt6-still
+        foliate
         # dev
         android-tools
         android-udev-rules
