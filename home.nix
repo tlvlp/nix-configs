@@ -30,6 +30,7 @@
         obsidian
         libreoffice-qt6-still
         foliate
+		calibre
         # dev
         android-tools
         android-udev-rules
