@@ -29,8 +29,8 @@
         signal-desktop
         obsidian
         libreoffice-qt6-still
-        foliate
-		calibre
+        calibre
+        fastfetch 
         # dev
         android-tools
         android-udev-rules
