@@ -48,6 +48,7 @@
         zsh-powerlevel10k
         meslo-lgs-nf
         fastfetch
+	wl-clipboard
     ];
 
     programs.btop = {
@@ -156,6 +157,9 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      extraConfig =  ''
+          set clipboard=unnamedplus
+      '';
       plugins = with pkgs.vimPlugins; [
         # TODO Add plugins
       ];
