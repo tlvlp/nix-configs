@@ -4,7 +4,7 @@
     # User
     home.username = "tlvlp";
     home.homeDirectory = "/home/tlvlp";
-    home.stateVersion = "25.05"; # RTFM before changing!
+    home.stateVersion = "26.05"; # RTFM before changing!
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -93,6 +93,7 @@
         ll = "ls -1halF --color";
         z = "zellij";
         c = "clear";
+	v = "nvim";
         hms = "home-manager switch";
       };
       initContent = ''
