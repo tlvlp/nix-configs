@@ -33,7 +33,6 @@
         fastfetch 
         # dev
         android-tools
-        android-udev-rules
         usbutils
         openssh
         libarchive
@@ -49,6 +48,8 @@
         meslo-lgs-nf
         fastfetch
 	wl-clipboard
+	alacritty
+	proton-vpn
     ];
 
     programs.btop = {
@@ -90,9 +91,8 @@
       syntaxHighlighting.enable = true;
       history.size = 5000;
       shellAliases = {
-        ll = "ls -1halF --color";
+        l = "ls -1halF --color";
         z = "zellij";
-        c = "clear";
 	v = "nvim";
         hms = "home-manager switch";
       };
